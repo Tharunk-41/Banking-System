@@ -53,7 +53,7 @@
     // Fetch and populate customer data
     async function fetchCustomers() {
       try {
-        const response = await axios.get('https://backend-fnf3.onrender.com/transactions');
+        const response = await axios.get('https://backend-jlan.onrender.com/transactions');
         const customers = response.data;
         const customersTable = document.getElementById('customers-table');
         customers.forEach(customer => {
