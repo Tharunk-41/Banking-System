@@ -4,6 +4,8 @@ const { MongoClient } = require('mongodb');
 
 const app = express();
 const port = process.env.PORT || 3000;
+const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+
 
 // Enable Cross-Origin Resource Sharing (CORS)
 app.use(cors());
@@ -85,7 +87,7 @@ async function startServer() {
           sender: sourceCustomer.name,
           receiver: destinationCustomer.name,
           amount: amount,
-          time: Now()
+          time: new Date().toLocaleString('en-US', options)
         }, { session });
     
         await session.commitTransaction();
