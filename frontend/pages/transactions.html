@@ -25,6 +25,11 @@
   </header>
   <div class="container">
     <h2 class="text-center pt-4" style="color: rgb(100, 0, 0);">Our Customers</h2>
+    <div class="d-flex justify-content-center align-items-center" id="loading-message" style="height: 100vh;">
+      <div class="spinner-border" role="status" style="width: 5rem; height: 5rem;">
+        <span class="sr-only">Loading...Try refreshing</span>
+      </div>
+    </div>
     <br>
     <div class="row">
       <div class="col">
@@ -56,6 +61,8 @@
         const response = await axios.get('https://backend-jlan.onrender.com/transactions');
         const customers = response.data;
         const customersTable = document.getElementById('customers-table');
+        const loadingMessage = document.querySelector('.d-flex.justify-content-center'); // Get the loading message element
+        const parentContainer = loadingMessage.parentNode;
         customers.forEach(customer => {
           const row = document.createElement('tr');
           row.style.color = 'black';
@@ -81,6 +88,7 @@
           row.appendChild(dt);
           customersTable.appendChild(row);
         });
+        parentContainer.removeChild(loadingMessage); // Remove the loading message from the DOM
       } catch (error) {
         console.error(error);
       }
