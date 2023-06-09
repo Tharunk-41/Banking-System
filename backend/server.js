@@ -81,10 +81,11 @@ async function startServer() {
     
         // Insert the transaction history
         await transactionCollection.insertOne({
+          id:sourceCustomer.id,
           sender: sourceCustomer.name,
           receiver: destinationCustomer.name,
           amount: amount,
-          time: new Date()
+          time: Now()
         }, { session });
     
         await session.commitTransaction();
