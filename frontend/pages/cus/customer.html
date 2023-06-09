@@ -51,7 +51,7 @@
         // Fetch and populate customer data
       async function fetchCustomers() {
       try {
-        const response = await axios.get('https://backend-fnf3.onrender.com/customers');
+        const response = await axios.get('https://backend-jlan.onrender.com/customers');
         const customers = response.data;
         const customersTable = document.getElementById('customers-table');
         customers.forEach(customer => {
@@ -103,7 +103,7 @@
     async function transferMoney(sourceId, destinationId, amount) {
       try {
         // Send transfer request to the server
-        const response = await axios.post('https://backend-fnf3.onrender.com/transfer', {
+        const response = await axios.post('https://backend-jlan.onrender.com/transfer', {
           sourceId,
           destinationId,
           amount
