@@ -2,10 +2,10 @@
 
 :root{
 
-    --main-color:#FFD012;
+    --main-color:#c0d7a1;
     --black:#F3F5F7;
     --bg:#fff;
-    --border:.1rem solid #FFD012;
+    --border:.1rem solid #7af0c3;
 }
 
 *{
@@ -81,9 +81,9 @@ body{
 }
 
 .header{
-    background-color:rgb(7, 25, 52);opacity:0.6;;
+    background-color:rgb(12, 53, 71);opacity:0.6;;
     display: flex;
-    align-items: center;
+    align-items: right;
     justify-content: space-between;
     padding:1.5rem 8%;
     border-bottom: var(--border);
@@ -91,6 +91,17 @@ body{
     top:0;
     width: 100vw;
     z-index: 1;
+    
+}
+.header.navbar{
+    justify-content: flex-end;
+}
+.header h1{
+    color:rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
 }
 
 .header .logo img{
@@ -99,8 +110,8 @@ body{
 
 .header .navbar a{
     margin:0 1rem;
-    font-size: 1.6rem;
-    color:#fff;
+    font-size: 2rem;
+    color:#b4d7af;
     text-decoration: none;
 }
 
@@ -115,9 +126,10 @@ a {
 }
 table{
     min-height: 100vh;
-    margin: 5px;
+    margin: 3rem;
     font-size: medium;
 }
+
 .loading {
     position: fixed;
     top: 50%;
@@ -174,5 +186,5 @@ table{
     }
 }
 .container{
-    margin-top: 10rem;
+    margin-top: 8rem;
 }
