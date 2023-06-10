@@ -142,6 +142,7 @@
         // Update the customer data on the webpage
         fetchCustomers();
       } catch (error) {
+        hideLoading(); // Hide buffering circle
         console.error(error);
       }
     }
